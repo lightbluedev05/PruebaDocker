@@ -6,7 +6,7 @@ app.get('/products', (req, res) => {
 })
 
 app.get('/', (req, res) => {
-    res.send('aasda');
+    res.send('aasasdda');
 })
 
 app.listen(app.get('port'), () => {
