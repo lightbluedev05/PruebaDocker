@@ -1,0 +1,21 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    depends_on:
+      - oracle
+    volumes:
+      - .:/home/app
+  oracle:
+    image: gvenzl/oracle-xe:21
+    ports:
+      - "1521:1521"
+    environment:
+      - ORACLE_PASSWORD=password
+    volumes:
+      - oracle-data:/opt/oracle/oradata
+volumes:
+  oracle-data: {}
